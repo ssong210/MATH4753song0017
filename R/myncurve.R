@@ -1,5 +1,5 @@
 #
-#' @title myrcurve()
+#' @title myncurve()
 #'
 #' @description Creates and plots random sample trials of binary distributions.
 #'
