@@ -20,5 +20,5 @@ A barplot which tabulates each experiment's results
 Creates and plots random sample trials of binary distributions.
 }
 \examples{
-mybin(30,10,0.7)
+\dontrun{mybin(30,10,0.7)}
 }

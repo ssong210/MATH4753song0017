@@ -1,17 +1,22 @@
 #
 #' @title myncurve()
 #'
-#' @description Creates and plots random sample trials of binary distributions.
+#' @description Plots lower tail curve area of given normal distribution and given value
 #'
-#' @param iter number of iterations, default value 100
-#' @param n sample size, default value 10
-#' @param p probability, default value 0.5
+#' @usage myncurve(mu, sigma, a)
 #'
-#' @return A barplot which tabulates each experiment's results
+#' @param mu mean
+#' @param sigma standard deviation
+#' @param a value for lower tail
+#'
+#' @importFrom graphics curve polygon
+#' @importFrom stats dnorm pnorm
+#'
 #' @export
 #'
-#' @examples mybin(30,10,0.7)
+#' @examples \dontrun{myncurve(30,10,0.7)}
 myncurve = function(mu, sigma, a){
+  x <- NULL
   curve(dnorm(x,mean=mu,sd=sigma), xlim = c(mu-3*sigma, mu + 3*sigma))
   xcurve=seq(mu-4*sigma,a,length=1000)
 

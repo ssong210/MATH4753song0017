@@ -2,23 +2,20 @@
 % Please edit documentation in R/myncurve.R
 \name{myncurve}
 \alias{myncurve}
-\title{myrcurve()}
+\title{myncurve()}
 \usage{
 myncurve(mu, sigma, a)
 }
 \arguments{
-\item{iter}{number of iterations, default value 100}
+\item{mu}{mean}
 
-\item{n}{sample size, default value 10}
+\item{sigma}{standard deviation}
 
-\item{p}{probability, default value 0.5}
-}
-\value{
-A barplot which tabulates each experiment's results
+\item{a}{value for lower tail}
 }
 \description{
-Creates and plots random sample trials of binary distributions.
+Plots lower tail curve area of given normal distribution and given value
 }
 \examples{
-mybin(30,10,0.7)
+\dontrun{myncurve(30,10,0.7)}
 }

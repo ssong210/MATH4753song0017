@@ -7,10 +7,13 @@
 #' @param n sample size, default value 10
 #' @param p probability, default value 0.5
 #'
+#' @importFrom graphics barplot
+#' @importFrom grDevices rainbow
+#'
 #' @return A barplot which tabulates each experiment's results
 #' @export
 #'
-#' @examples mybin(30,10,0.7)
+#' @examples \dontrun{mybin(30,10,0.7)}
 mybin=function(iter=100,n=10, p=0.5){
   # make a matrix to hold the samples
   #initially filled with NA's
