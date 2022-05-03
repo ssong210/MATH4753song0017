@@ -1,0 +1,82 @@
+---
+title: "Package utilities"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Package utilities}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(MATH4753song0017)
+```
+
+# Introduction
+
+This package was created to collect a few functions and data sets used in the course MATH 4753. The functions contained in this package were used to complete Laboratory assignments throughout the course, and perform various statistical operations. There are also data sets that were used to perform these statistical methods.
+
+# Functions
+
+## mybin()
+
+This function performs a random sampling of specified size from a binomial distribution, and performs this experiment multiple times. The cumulative result of all the experiment iterations are graphically presented, and provides an experiment-based visualization of the probability density spread of the binomial distribution.
+
+Example:
+
+```{r}
+MATH4753song0017::mybin(iter=200,n=12,p=0.1)
+```
+
+## myboot2()
+
+This function performs a bootstrapping experiment from a given sample. The given sample is then resampled multiple times with replacement, and a certain statistic function is taken from each of those resamplings. The results from each of these iterations are accumulated and presented graphically, along with the confidence interval for the bootstrapping.
+
+```{r}
+MATH4753song0017::myboot2(x=MATH4753song0017::ddt$DDT)
+```
+
+## mycltu()
+
+This function demonstrates the central limit theorem experimentally, taking random samples from a uniform distribution and finding the mean of each random sampling iteration. The results of these samplings are then shown in a graph, and it is shown that the mean of the random sampling coincides with the population mean, that is the mean of the uniform distribution, and that the random sampling results in a normal distribution despite the original population being uniformly distributed.
+
+Example:
+
+```{r}
+MATH4753song0017::mycltu(n=10,iter=1000,a=5,b=25)
+```
+
+## myddt()
+
+This function prints out data from the ddt data set, which is also included in this package, and specifically shows the information for a given species of fish, which is passed into the function as a parameter.
+
+```{r}
+myddt(df=ddt, SPECIES="CCATFISH")
+```
+
+
+# Data sets
+
+## ddt
+
+This data set contains information about fish in the Tennessee River system, and the objective of this data sampling was to determine the DDT content in fish, along with descriptive statistics about each of the fish sampled.
+
+```{r}
+data("ddt")
+knitr::kable(head(ddt))
+```
+
+## fire
+
+This data set contains information about fire damage in areas close to a fire. This data set was sample to try to correlate the amount of damage done to the distance from the fire, since it would make sense intuitively that closer areas to a fire receive more damage.
+
+```{r}
+data("fire")
+knitr::kable(head(fire))
+```
